@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+
 const Markup = () => {
+  // JSXの場合にはscript要素を使うのではなく副作用はuseEffectで記述
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `this is useEffect`;
+  }, []);
+
   return (
     <div>
       <a href="#">

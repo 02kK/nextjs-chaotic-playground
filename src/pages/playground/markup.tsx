@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import styles from "../../../styles/markup.module.css";
+
 const Markup = () => {
   // JSXの場合にはscript要素を使うのではなく副作用はuseEffectで記述
   useEffect(() => {
@@ -8,14 +10,33 @@ const Markup = () => {
   }, []);
 
   return (
-    <div>
+    <main className={styles.markup}>
+      <section>
+        <dl>
+          <dt>Japan</dt>
+          <dd>Tokyo</dd>
+          <dd>Chiba</dd>
+          <dd>Kanagawa</dd>
+          <dd>Saitama</dd>
+        </dl>
+        <figure>
+          <img
+            src="/img/shared/my_icon.jpeg"
+            alt="my_icon"
+            height="300"
+            width="300"
+          />
+          <figcaption>SNSで使っているアイコン</figcaption>
+        </figure>
+      </section>
       <a href="#">
-        <div>
+        <p>
           a要素はトランスペアレントなので親が内包できるコンテンツを内包できる
-        </div>
+        </p>
       </a>
-      <div>&copy; &lt;Playground Markup Sample&gt;</div>
-    </div>
+      <hr />
+      <p>&copy; &lt;Playground Markup Sample&gt;</p>
+    </main>
   );
 };
 

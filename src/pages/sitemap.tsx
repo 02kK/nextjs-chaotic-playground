@@ -1,4 +1,5 @@
-import styles  from "../../styles/sitemap.module.sass";
+import styles from "../../styles/sitemap.module.sass";
+import Link from "next/link";
 
 const Sitemap = () => {
   return (
@@ -7,7 +8,9 @@ const Sitemap = () => {
       <ul>
         <li>
           マークアップの練習：
-          <a href="/playground/markup">/playground/markup</a>
+          <Link href="/playground/markup">
+            <a>/playground/markup</a>
+          </Link>
         </li>
       </ul>
     </div>

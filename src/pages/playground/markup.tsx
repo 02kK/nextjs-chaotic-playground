@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-import styles from "../../../styles/markup.module.css";
+import styles from "../../../styles/markup.module.sass";
 
 // Property does not exist on type 'JSX.IntrinsicElements'のコンパイルエラーとなった際の妥協策
 declare global {
@@ -15,7 +15,7 @@ const dateToday = new Date();
 
 const Markup = () => {
   // 再レンダリング検知
-  console.log("rerender");
+  // console.log("rerender");
 
   // JSXの場合にはscript要素を使うのではなく副作用はuseEffectで記述
   useEffect(() => {
@@ -26,8 +26,9 @@ const Markup = () => {
     }, 5000);
   }, []);
 
-  const [dateNow, setDateNow] = useState(new Date());
-  const refreshNowDate = () => setDateNow(() => new Date());
+  // Warning: X did not match.Server: y Client: z が出るため一旦コメントアウト
+  // const [dateNow, setDateNow] = useState(new Date());
+  // const refreshNowDate = () => setDateNow(() => new Date());
 
   return (
     <main className={styles.markup}>
@@ -74,13 +75,16 @@ const Markup = () => {
           <rt>かん</rt>
         </ruby>
       </p>
-      <time dateTime={Date()}>
+      {/* Warning: X did not match.Server: y Client: z が出る */}
+      {/* TODO: 下記記事参照して理解して必ず解決すること */}
+      {/* https://qiita.com/aiji42/items/748bf3ef3c7ca65535db */}
+      {/* <time>
         本日の日付は
         {`${dateToday.getFullYear()}/${dateToday.getMonth()}/${dateToday.getDay()}`}
       </time>
       <br />
-      <time dateTime={`${dateNow}`}>只今の時刻は{`${dateNow}`}</time>
-      <button onClick={refreshNowDate}>refresh time!</button>
+      <time>只今の時刻は{`${dateNow}`}</time>
+      <button onClick={refreshNowDate}>refresh time!</button> */}
       <p>&copy; &lt;Playground Markup Sample&gt;</p>
     </main>
   );

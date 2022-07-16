@@ -16,7 +16,10 @@ const Markup = () => {
   // JSXの場合にはscript要素を使うのではなく副作用はuseEffectで記述
   useEffect(() => {
     // Update the document title using the browser API
-    document.title = `this is useEffect`;
+    document.title = `this is useEffect!but...?`;
+    setTimeout(() => {
+      document.title = "Create Next App";
+    }, 5000);
   }, []);
 
   return (

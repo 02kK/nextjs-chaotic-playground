@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { ReactDOM } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "../../../styles/markup.module.css";
 
@@ -12,7 +11,12 @@ declare global {
   }
 }
 
+const dateToday = new Date();
+
 const Markup = () => {
+  // 再レンダリング検知
+  console.log("rerender");
+
   // JSXの場合にはscript要素を使うのではなく副作用はuseEffectで記述
   useEffect(() => {
     // Update the document title using the browser API
@@ -21,6 +25,9 @@ const Markup = () => {
       document.title = "Create Next App";
     }, 5000);
   }, []);
+
+  const [dateNow, setDateNow] = useState(new Date());
+  const refreshNowDate = () => setDateNow(() => new Date());
 
   return (
     <main className={styles.markup}>
@@ -58,8 +65,22 @@ const Markup = () => {
           <rb>予報</rb>
           <rt>よほう</rt>
         </ruby>
+        {/* Chromeなどでの二重なルビの付け方 */}
+        <ruby>
+          <ruby>
+            <rb>関</rb>
+            <rt>せき</rt>
+          </ruby>
+          <rt>かん</rt>
+        </ruby>
       </p>
-
+      <time dateTime={Date()}>
+        本日の日付は
+        {`${dateToday.getFullYear()}/${dateToday.getMonth()}/${dateToday.getDay()}`}
+      </time>
+      <br />
+      <time dateTime={`${dateNow}`}>只今の時刻は{`${dateNow}`}</time>
+      <button onClick={refreshNowDate}>refresh time!</button>
       <p>&copy; &lt;Playground Markup Sample&gt;</p>
     </main>
   );

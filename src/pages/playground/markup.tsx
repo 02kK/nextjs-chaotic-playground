@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
+import Image from "next/image";
 
 import styles from "../../../styles/markup.module.sass";
 
@@ -41,7 +42,7 @@ const Markup = () => {
           <dd>Saitama</dd>
         </dl>
         <figure>
-          <img
+          <Image
             src="/img/shared/my_icon.jpeg"
             alt="my_icon"
             height="300"

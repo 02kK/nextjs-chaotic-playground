@@ -1,1 +1,2 @@
 *.tsx linguist-language=TSX
+*.ts linguist-language=TSX

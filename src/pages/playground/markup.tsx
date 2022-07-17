@@ -37,7 +37,7 @@ const Markup = () => {
   // const refreshNowDate = () => setDateNow(() => new Date());
 
   return (
-    <main className={styles.markup} draggable={false} hidden >
+    <main className={styles.markup} draggable={false} hidden>
       <section>
         <details>
           <summary>Prefectures of Japan(Widget)</summary>
@@ -101,7 +101,7 @@ const Markup = () => {
       <p>
         古い日本のお札には日本銀行が
         <bdo dir="rtl">
-          <mark children="日本銀行" />
+          <mark>日本銀行</mark>
         </bdo>
         と表記されていた
       </p>
@@ -111,7 +111,7 @@ const Markup = () => {
           <h2>Continue...?</h2>
           <button
             onClick={() => {
-              useIsModalOpen(!isModalOpen);
+              useIsModalOpen(() => !isModalOpen);
             }}
           >
             close modal?
@@ -123,16 +123,22 @@ const Markup = () => {
       </dialog>
       <button
         onClick={() => {
-          useIsModalOpen(!isModalOpen);
+          useIsModalOpen(() => !isModalOpen);
         }}
       >
         open modal?
       </button>
       <hr />
-      <form action="post"><input autoCapitalize="characters" inputMode="decimal" autoFocus></input></form>
+      <form action="post">
+        <input
+          autoCapitalize="characters"
+          inputMode="decimal"
+          autoFocus
+        ></input>
+      </form>
       <hr />
       <noscript>
-        We can't use JavaScript on your blowser.
+        We can&apos;t use JavaScript on your blowser.
         <br />
         Please activate JavaScript.
       </noscript>

@@ -1,5 +1,6 @@
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "../../../styles/markup.module.sass";
 
@@ -27,6 +28,10 @@ const Markup = () => {
     }, 5000);
   }, []);
 
+  const [isModalOpen, useIsModalOpen] = useState(false);
+
+  // document.getElementById("modal").showModal()
+
   // Warning: X did not match.Server: y Client: z が出るため一旦コメントアウト
   // const [dateNow, setDateNow] = useState(new Date());
   // const refreshNowDate = () => setDateNow(() => new Date());
@@ -34,13 +39,16 @@ const Markup = () => {
   return (
     <main className={styles.markup}>
       <section>
-        <dl>
-          <dt>Japan</dt>
-          <dd>Tokyo</dd>
-          <dd>Chiba</dd>
-          <dd>Kanagawa</dd>
-          <dd>Saitama</dd>
-        </dl>
+        <details>
+          <summary>Prefectures of Japan(Widget)</summary>
+          <dl>
+            <dt>Japan</dt>
+            <dd>Tokyo</dd>
+            <dd>Chiba</dd>
+            <dd>Kanagawa</dd>
+            <dd>Saitama</dd>
+          </dl>
+        </details>
         <figure>
           <Image
             src="/img/shared/my_icon.jpeg"
@@ -86,6 +94,36 @@ const Markup = () => {
       <br />
       <time>只今の時刻は{`${dateNow}`}</time>
       <button onClick={refreshNowDate}>refresh time!</button> */}
+      <hr />
+      <code className="lang-javascript">
+        console.log(<mark>window.href</mark>)
+      </code>
+      <p>
+        古い日本のお札には日本銀行が
+        <bdo dir="rtl">
+          <mark children="日本銀行" />
+        </bdo>
+        と表記されていた
+      </p>
+      <hr />
+      <dialog id="modal" open={isModalOpen}>
+        <h2>Continue...?</h2>
+        <button
+          onClick={() => {
+            useIsModalOpen(!isModalOpen);
+          }}
+        >
+          close modal?
+        </button>
+        <span> / </span>
+        <Link href="/sitemap">No</Link>
+      </dialog>
+      <button
+        onClick={() => {
+          useIsModalOpen(!isModalOpen);
+        }}
+      >open modal?</button>
+      <hr />
       <p>&copy; &lt;Playground Markup Sample&gt;</p>
     </main>
   );

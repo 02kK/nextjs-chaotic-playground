@@ -37,7 +37,7 @@ const Markup = () => {
   // const refreshNowDate = () => setDateNow(() => new Date());
 
   return (
-    <main className={styles.markup}>
+    <main className={styles.markup} draggable={false} hidden >
       <section>
         <details>
           <summary>Prefectures of Japan(Widget)</summary>
@@ -107,23 +107,35 @@ const Markup = () => {
       </p>
       <hr />
       <dialog id="modal" open={isModalOpen}>
-        <h2>Continue...?</h2>
-        <button
-          onClick={() => {
-            useIsModalOpen(!isModalOpen);
-          }}
-        >
-          close modal?
-        </button>
-        <span> / </span>
-        <Link href="/sitemap">No</Link>
+        <div className={styles.modal_wrapper}>
+          <h2>Continue...?</h2>
+          <button
+            onClick={() => {
+              useIsModalOpen(!isModalOpen);
+            }}
+          >
+            close modal?
+          </button>
+          <span> / </span>
+          <Link href="/sitemap">No</Link>
+          <div className="non_scroll"></div>
+        </div>
       </dialog>
       <button
         onClick={() => {
           useIsModalOpen(!isModalOpen);
         }}
-      >open modal?</button>
+      >
+        open modal?
+      </button>
       <hr />
+      <form action="post"><input autoCapitalize="characters" inputMode="decimal" autoFocus></input></form>
+      <hr />
+      <noscript>
+        We can't use JavaScript on your blowser.
+        <br />
+        Please activate JavaScript.
+      </noscript>
       <p>&copy; &lt;Playground Markup Sample&gt;</p>
     </main>
   );

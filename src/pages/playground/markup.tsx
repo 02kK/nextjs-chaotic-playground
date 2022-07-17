@@ -29,6 +29,9 @@ const Markup = () => {
   }, []);
 
   const [isModalOpen, useIsModalOpen] = useState(false);
+  const useReverseModalState = () => {
+    useIsModalOpen(!isModalOpen);
+  };
 
   // document.getElementById("modal").showModal()
 
@@ -109,25 +112,13 @@ const Markup = () => {
       <dialog id="modal" open={isModalOpen}>
         <div className={styles.modal_wrapper}>
           <h2>Continue...?</h2>
-          <button
-            onClick={() => {
-              useIsModalOpen(() => !isModalOpen);
-            }}
-          >
-            close modal?
-          </button>
+          <button onClick={useReverseModalState}>close modal?</button>
           <span> / </span>
           <Link href="/sitemap">No</Link>
           <div className="non_scroll"></div>
         </div>
       </dialog>
-      <button
-        onClick={() => {
-          useIsModalOpen(() => !isModalOpen);
-        }}
-      >
-        open modal?
-      </button>
+      <button onClick={useReverseModalState}>open modal?</button>
       <hr />
       <form action="post">
         <input

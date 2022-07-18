@@ -14,7 +14,10 @@ const Style = () => {
           <div className="cls-1 xyz">
             <div className="cls-2 xy">
               <div className="cls-3 x">
-                <div className="xxx"></div>
+                <div className="xxx y z">
+                  <div className="x-xx"></div>
+                  <div className="y-xx x-xx zzz"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -77,17 +80,45 @@ const SDiv1 = styled.div`
     }
   }
 
-  // classが単一でxから始まった場合に適用
+  // classが全体でxから始まった場合に適用
   [class^="x"] {
     :active {
       background-color: ${sDiv1TestColor2};
     }
   }
 
+  // class名が全体で3で終わった場合に適用
+  [class$="3"] {
+    display: none;
+  }
+
+  // class名全体がx-で始まる場合に適用
+  [class|="x"] {
+    display: none;
+  }
+
+  [class^="y-xx x-xx"] {
+    display: none;
+  }
+
   .xxx {
     height: 100%;
     padding: 20px;
     border: 1px solid var(--purple-color);
+    border-radius: 999px;
+  }
+
+  .x-xx {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--purple-color);
+    border-radius: 999px;
+  }
+
+  .zzz {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--blue-color);
     border-radius: 999px;
   }
 `;

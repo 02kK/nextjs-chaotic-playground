@@ -166,6 +166,11 @@ const SDiv2 = styled.div`
     & > p:first-of-type {
       color: #7f7;
     }
+    & > :last-of-type {
+      display: inline-block;
+      color: #fff;
+      background-color: #62c;
+    }
   }
 `;
 

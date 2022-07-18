@@ -14,7 +14,10 @@ const Style = () => {
           <div className="cls-1 xyz">
             <div className="cls-2 xy">
               <div className="cls-3 x">
-                <div className="xxx"></div>
+                <div className="xxx y z">
+                  <div className="x-xx"></div>
+                  <div className="y-xx x-xx zzz"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -57,19 +60,40 @@ const SDiv1 = styled.div`
     border: 1px solid var(--blue-color);
   }
 
-  // class="x"に完全一致した場合のみ適用
+  .xxx {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--purple-color);
+    border-radius: 999px;
+  }
+
+  .x-xx {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--purple-color);
+    border-radius: 999px;
+  }
+
+  .zzz {
+    height: 100%;
+    padding: 20px;
+    border: 1px solid var(--blue-color);
+    border-radius: 999px;
+  }
+
+  // class名全体が"x"に完全一致した場合のみ適用
   [class="x"] {
     display: none;
   }
 
-  // classは複数あってもよく、その中にxに部分一致するclassがあれば適用
+  // classの中に"x"の文字が含まれれば適用
   [class*="x"] {
     :hover {
       cursor: pointer;
     }
   }
 
-  // classは複数あってもいいが、その中にxに完全一致するclassがあれば適用
+  // class名の中に"x"という独立したクラス（space区切り）が含まれていれば適用
   [class~="x"] {
     :active {
       // styled-componentを使えばいわばJS-in-CSSができる
@@ -77,18 +101,26 @@ const SDiv1 = styled.div`
     }
   }
 
-  // classが単一でxから始まった場合に適用
+  // class名全体が"x"で始まれば適用
   [class^="x"] {
     :active {
       background-color: ${sDiv1TestColor2};
     }
   }
 
-  .xxx {
-    height: 100%;
-    padding: 20px;
-    border: 1px solid var(--purple-color);
-    border-radius: 999px;
+  // class名が全体が"3"で終われば適用
+  [class$="3"] {
+    display: none;
+  }
+
+  // class名全体が"x-"で始まる場合に適用
+  [class|="x"] {
+    display: none;
+  }
+
+  // class名全体が"y-xx x-xx"で始まる場合に適用
+  [class^="y-xx x-xx"] {
+    display: none;
   }
 `;
 

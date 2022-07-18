@@ -19,15 +19,17 @@ const SButton = styled.div`
   padding: 10px 15px;
   border: 1px solid #fff;
   border-radius: 5px;
-  background-color: #0577b4;
+  background-color: #0070f3;
   color: #fff;
   text-align: center;
   font-size: 30px;
+  transition: transform 0.3s ease;
   &:hover {
     cursor: pointer;
-    border: 1px solid #0577b4;
+    border: 1px solid #0070f3;
     background-color: #fff;
-    color: #0577b4;
+    color: #0070f3;
+    transform: scale(1.1);
   }
 `;
 

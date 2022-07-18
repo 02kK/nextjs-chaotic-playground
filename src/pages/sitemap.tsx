@@ -1,5 +1,7 @@
-import styles from "../../styles/sitemap.module.sass";
 import Link from "next/link";
+
+import LinkButton from "../component/LinkButton";
+import styles from "../../styles/sitemap.module.sass";
 
 const Sitemap = () => {
   return (
@@ -13,6 +15,7 @@ const Sitemap = () => {
           </Link>
         </li>
       </ul>
+      <LinkButton href="/" buttonText="Transition to Top Page" />
     </div>
   );
 };

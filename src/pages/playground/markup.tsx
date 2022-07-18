@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "../../../styles/markup.module.sass";
+import styles from "../../../styles/playground/markup.module.sass";
 
 // Property does not exist on type 'JSX.IntrinsicElements'のコンパイルエラーとなった際の妥協策
 declare global {
@@ -40,7 +40,7 @@ const Markup = () => {
   // const refreshNowDate = () => setDateNow(() => new Date());
 
   return (
-    <main className={styles.markup} draggable={false} hidden>
+    <main className={styles.markup} draggable={false}>
       <section>
         <details>
           <summary>Prefectures of Japan(Widget)</summary>

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../styles/Home.module.scss";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <h2>This is chaotic playground about web-frontend-technology!</h2>
 
         <p className={styles.description}>
           Get started by editing{" "}
@@ -23,6 +25,14 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
+          <Link href="/sitemap">
+            <a className={styles.card} style={{color: "#048ebe"}}>
+              <h2>Sitemap &rarr;</h2>
+              <p>This page is links to a page on this site.</p>
+              <p>And more...?</p>
+            </a>
+          </Link>
+
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>

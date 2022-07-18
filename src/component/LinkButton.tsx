@@ -1,17 +1,22 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const ToSitemapButton = () => {
+type LinkButtonProps = {
+  href: string;
+  buttonText: string;
+};
+
+const LinkButton = (props: LinkButtonProps) => {
   return (
-    <Link href="/sitemap">
-      <SButton>Return Sitemap</SButton>
+    <Link href={props.href}>
+      <SButton>{props.buttonText}</SButton>
     </Link>
   );
 };
 
 const SButton = styled.div`
+  display: inline-block;
   padding: 10px 15px;
-  width: 300px;
   border: 1px solid #fff;
   border-radius: 5px;
   background-color: #0577b4;
@@ -26,4 +31,4 @@ const SButton = styled.div`
   }
 `;
 
-export default ToSitemapButton;
+export default LinkButton;

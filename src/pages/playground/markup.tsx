@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ToSitemapButton from "../../component/ToSitemapButton"
 import styles from "../../../styles/playground/markup.module.sass";
 
 // Property does not exist on type 'JSX.IntrinsicElements'のコンパイルエラーとなった際の妥協策
@@ -133,6 +134,7 @@ const Markup = () => {
         <br />
         Please activate JavaScript.
       </noscript>
+      <ToSitemapButton />
       <p>&copy; &lt;Playground Markup Sample&gt;</p>
     </main>
   );

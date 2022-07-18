@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styled from "styled-components"
 
 import LinkButton from "../component/LinkButton";
 import styles from "../../styles/sitemap.module.sass";
@@ -19,5 +20,8 @@ const Sitemap = () => {
     </div>
   );
 };
+
+const SDiv = styled.div`
+`
 
 export default Sitemap;

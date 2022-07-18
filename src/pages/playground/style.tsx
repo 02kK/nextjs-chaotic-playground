@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 import StyledPGContainer from "../../component/StyledPGContainer";
 
+// emotionのstyled-components記法の中でJSを利用するテスト
 const sDiv1TestColor1 = "#ff5";
 const sDiv1TestColor2 = "#f5f";
 
@@ -22,6 +23,26 @@ const Style = () => {
             </div>
           </div>
         </SDiv1>
+        <SDivider />
+        <SDiv2>
+          <h2>構造擬似クラスの指定の検証</h2>
+          <ul>
+            <li>1番目のli要素</li>
+            <li>2番目のli要素</li>
+            <p>1番目のp要素</p>
+            <li>3番目のli要素</li>
+            <p>2番目のp要素</p>
+            <li>4番目のli要素</li>
+            <li>5番目のli要素</li>
+            <li>6番目のli要素</li>
+            <li>7番目のli要素</li>
+            <li>8番目のli要素</li>
+            <li>9番目のli要素</li>
+            <li>10番目のli要素</li>
+            <li>11番目のli要素</li>
+            <li>12番目のli要素</li>
+          </ul>
+        </SDiv2>
         <SDivider />
       </>
     </StyledPGContainer>
@@ -121,6 +142,30 @@ const SDiv1 = styled.div`
   // class名全体が"y-xx x-xx"で始まる場合に適用
   [class^="y-xx x-xx"] {
     display: none;
+  }
+`;
+
+const SDiv2 = styled.div`
+  ul {
+    & > :nth-child(3n) {
+      color: #77f;
+    }
+    & > :nth-child(-n + 2) {
+      font-weight: bold;
+    }
+    & > :first-child {
+      font-style: italic;
+    }
+    & > :nth-last-child(2) {
+      color: #f77;
+    }
+    // ul配下 && p && 最初の子要素 が存在しないため適用されない
+    & > p:first-child {
+      display: none;
+    }
+    & > p:first-of-type {
+      color: #7f7;
+    }
   }
 `;
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import styled from "@emotion/styled";
 
 import LinkButton from "../../component/LinkButton";
 import StyledPGContainer from "../../component/StyledPGContainer";
@@ -133,6 +134,10 @@ const Markup = () => {
           ></input>
         </form>
         <hr />
+        <SDownloadLink href="/pdf/sample.pdf" download>
+          PDFサンプルのDownloadリンクはこちら
+        </SDownloadLink>
+        <hr />
         <noscript>
           We can&apos;t use JavaScript on your blowser.
           <br />
@@ -144,5 +149,12 @@ const Markup = () => {
     </StyledPGContainer>
   );
 };
+
+const SDownloadLink = styled.a`
+  &::before {
+    content: url(/img/shared/pdf_icon.png);
+    vertical-align: middle;
+  }
+`;
 
 export default Markup;

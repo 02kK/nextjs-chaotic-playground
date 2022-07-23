@@ -68,5 +68,3 @@ Window.prototype; // {constructor: ƒ Window()}
 
 Rabbit.prototype; // {constructor: ƒ Rabbit()}
 
-
-

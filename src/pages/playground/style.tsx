@@ -44,6 +44,20 @@ const Style = () => {
           </ul>
         </SDiv2>
         <SDivider />
+        <SDiv3>
+          <h2>フローティングボックスの検証</h2>
+          <h3></h3>
+          <div className="container_block">
+            <div className="a">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+            <div className="b">
+              YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+            </div>
+            <div className="c">
+              ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+            </div>
+          </div>
+        </SDiv3>
+        <SDivider />
       </>
     </StyledPGContainer>
   );
@@ -170,6 +184,30 @@ const SDiv2 = styled.div`
       display: inline-block;
       color: #fff;
       background-color: #62c;
+    }
+  }
+`;
+
+const SDiv3 = styled.div`
+  .container_block {
+    display: flow-root;
+    border: 2px solid #ddd;
+    & > div {
+      height: auto;
+      overflow-wrap: break-word;
+      color: #fff;
+    }
+    .a {
+      float: right;
+      width: 80px;
+      background-color: #f44;
+    }
+    .b {
+      background-color: #4f4;
+    }
+    .c {
+      clear: both;
+      background-color: #44f;
     }
   }
 `;

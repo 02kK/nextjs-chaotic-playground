@@ -1,4 +1,5 @@
-//　関数宣言をするとグローバルスコープにその関数名のオブジェクトができる（グローバルオブジェクトのプロパティに追加される）
+// @ts-nocheck
+// 関数宣言をするとグローバルスコープにその関数名のオブジェクトができる（グローバルオブジェクトのプロパティに追加される）
 function Rabbit() {}
 console.log(Rabbit === window.Rabbit); //true
 
@@ -68,3 +69,4 @@ Window.prototype; // {constructor: ƒ Window()}
 
 Rabbit.prototype; // {constructor: ƒ Rabbit()}
 
+export {}

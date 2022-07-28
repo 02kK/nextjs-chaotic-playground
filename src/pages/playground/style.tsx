@@ -10,8 +10,9 @@ const Style = () => {
   return (
     <StyledPGContainer>
       <>
+        <h1>■ CSS3の検証</h1>
         <SDiv1>
-          <h2>属性セレクタの指定の検証</h2>
+          <h2>▼ 属性セレクタの指定の検証</h2>
           <div className="cls-1 xyz">
             <div className="cls-2 xy">
               <div className="cls-3 x">
@@ -25,7 +26,7 @@ const Style = () => {
         </SDiv1>
         <SDivider />
         <SDiv2>
-          <h2>構造擬似クラスの指定の検証</h2>
+          <h2>▼ 構造擬似クラスの指定の検証</h2>
           <ul>
             <li>1番目のli要素</li>
             <li>2番目のli要素</li>
@@ -45,7 +46,7 @@ const Style = () => {
         </SDiv2>
         <SDivider />
         <SDiv3>
-          <h2>フローティングボックスの検証</h2>
+          <h2>▼ フローティングボックスの検証</h2>
           <div className="container_block">
             <div className="a">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
             <div className="b">
@@ -66,6 +67,44 @@ const Style = () => {
             <div className="f">FFF</div>
           </div>
         </SDiv3>
+        <SDivider />
+        <SDiv4>
+          <h2>▼ ポジションボックスの検証</h2>
+          <div className="sticky-container">
+            <div></div>
+            <div></div>
+            <div className="sticky">Sticky Bannar</div>
+            <div className="sticky-next"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div className="sticky-outer"></div>
+          <div className="footer">&copy; Sample Sapmple Corporation</div>
+        </SDiv4>
         <SDivider />
       </>
     </StyledPGContainer>
@@ -256,6 +295,46 @@ const SDiv3 = styled.div`
     .f {
       background-color: #aaf;
     }
+  }
+`;
+const SDiv4 = styled.div`
+  .sticky-container {
+    > div {
+      height: 50px;
+      border: 2px solid #ddd;
+      background-color: #aa1bff;
+      &.sticky {
+        display: inline-block;
+        position: sticky;
+        float: right;
+        top: 100px;
+        padding: 10px 30px;
+        background-color: #23ff17;
+        font-size: 30px;
+        line-height: 30px;
+        color: #fff;
+      }
+      &.sticky-next {
+        clear: right;
+      }
+    }
+  }
+  .sticky-outer {
+    height: 100vh;
+    background-color: #23ffb5;
+  }
+  .footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #44f;
+    color: #fff;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
   }
 `;
 

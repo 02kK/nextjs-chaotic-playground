@@ -46,7 +46,6 @@ const Style = () => {
         <SDivider />
         <SDiv3>
           <h2>フローティングボックスの検証</h2>
-          <h3></h3>
           <div className="container_block">
             <div className="a">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
             <div className="b">
@@ -55,6 +54,16 @@ const Style = () => {
             <div className="c">
               ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
             </div>
+          </div>
+          <div className="container01">
+            <div className="a">AAA</div>
+            <div className="b">BBB</div>
+            <div className="c">CCC</div>
+          </div>
+          <div className="container02">
+            <div className="d">DDD</div>
+            <div className="e">EEE</div>
+            <div className="f">FFF</div>
           </div>
         </SDiv3>
         <SDivider />
@@ -191,11 +200,11 @@ const SDiv2 = styled.div`
 const SDiv3 = styled.div`
   .container_block {
     display: flow-root;
+    margin-bottom: 30px;
     border: 2px solid #ddd;
     & > div {
       height: auto;
       overflow-wrap: break-word;
-      color: #fff;
     }
     .a {
       float: right;
@@ -208,6 +217,44 @@ const SDiv3 = styled.div`
     .c {
       clear: both;
       background-color: #44f;
+    }
+  }
+
+  .container01 {
+    border: 2px solid #ddd;
+    margin-bottom: 30px;
+    width: 200px;
+    .a {
+      background-color: #f00;
+    }
+    .b {
+      background-color: #f66;
+      float: left;
+      height: 50px;
+    }
+    .c {
+      background-color: #faa;
+      display: block;
+    }
+    /* clearfix設定で回り込み回避 */
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  .container02 {
+    border: 2px solid #ddd;
+    margin-bottom: 30px;
+    /* clear: both; */
+    .d {
+      background-color: #00f;
+    }
+    .e {
+      background-color: #66f;
+    }
+    .f {
+      background-color: #aaf;
     }
   }
 `;

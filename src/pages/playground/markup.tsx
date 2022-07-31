@@ -65,7 +65,7 @@ const Markup = () => {
               height="300"
               width="300"
             />
-            <figcaption>SNSで使っているアイコン</figcaption>
+            <figcaption>アイコン画像</figcaption>
           </figure>
         </section>
         <a href="#">
@@ -76,6 +76,7 @@ const Markup = () => {
         <hr />
         <p>
           {/* ルビのつけかた */}
+          <p>1重ルビ</p>
           <ruby>
             <rb>局地</rb>
             <rt>きょくち</rt>
@@ -84,13 +85,15 @@ const Markup = () => {
             <rb>予報</rb>
             <rt>よほう</rt>
           </ruby>
+          <br />
           {/* Chromeなどでの二重なルビの付け方 */}
+          <p>2重ルビ</p>
           <ruby>
             <ruby>
-              <rb>関</rb>
-              <rt>せき</rt>
+              <rb>米</rb>
+              <rt>べい</rt>
             </ruby>
-            <rt>かん</rt>
+            <rt>こめ</rt>
           </ruby>
         </p>
         {/* Warning: X did not match.Server: y Client: z が出る */}
@@ -144,7 +147,7 @@ const Markup = () => {
           Please activate JavaScript.
         </noscript>
         <LinkButton href="/sitemap" buttonText="Return Sitemap" />
-        <p>&copy; &lt;Playground Markup Sample&gt;</p>
+        <p>&copy; &lt;Markup Sample&gt;</p>
       </>
     </StyledPGContainer>
   );

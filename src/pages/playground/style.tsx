@@ -106,6 +106,42 @@ const Style = () => {
           <div className="footer">&copy; Sample Sapmple Corporation</div>
         </SDiv4>
         <SDivider />
+        <SDiv5>
+          <h2>▼ アウターボックスタイプの検証</h2>
+          <div className="block">
+            block block block block block block block block block block block
+            block block block block block block block block block block block
+            block block block block block block block block block block block
+            block block block block block block block block block block block
+            block block block block block block block block block block block
+            block block block block block block block block block block
+          </div>
+          <div className="flex">
+            flex flex flex flex flex flex flex flex flex flex flex flex flex
+            flex flex flex flex flex flex flex flex flex flex flex flex flex
+            flex flex flex flex flex flex flex flex flex flex flex flex flex
+            flex flex flex flex flex flex flex flex flex flex flex flex flex
+            flex flex flex flex flex flex flex flex flex flex flex{" "}
+          </div>
+          <div className="grid">
+            grid grid grid grid grid grid grid grid grid grid grid grid grid
+            grid grid grid grid grid grid grid grid grid grid grid grid grid
+            grid grid grid grid grid grid grid grid grid grid grid grid grid
+            grid grid grid grid grid grid grid grid grid grid grid grid grid
+            grid grid grid grid grid grid grid grid
+          </div>
+          <div className="table">
+            table table table table table table table table table table table
+            table table table table table table table table table table table
+            table table table table table table table table table table table
+            table table table table table table table table table table table
+            table table table table
+          </div>
+          <div className="inline">inline</div>
+          <div className="inline-block">inline-block</div>
+          <div className="inline-flex">inline-flex</div>
+        </SDiv5>
+        <SDivider />
       </>
     </StyledPGContainer>
   );
@@ -335,6 +371,38 @@ const SDiv4 = styled.div`
     line-height: 50px;
     font-size: 30px;
     text-align: center;
+  }
+`;
+
+const SDiv5 = styled.div`
+  div {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #444;
+    color: #f6f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .table {
+    display: table;
+  }
+  .inline {
+    display: inline;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
   }
 `;
 

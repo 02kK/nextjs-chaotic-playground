@@ -144,12 +144,14 @@ const Style = () => {
         <SDivider />
         <SDiv6>
           <h2>▼ グリッドレイアウトの検証</h2>
-          <div className="A">A</div>
-          <div className="B">B</div>
-          <div className="C">C</div>
-          <div className="D">D</div>
-          <div className="E">E</div>
-          <div className="F">F</div>
+          <div className="grid_container">
+            <div className="A">A</div>
+            <div className="B">B</div>
+            <div className="C">C</div>
+            <div className="D">D</div>
+            <div className="E">E</div>
+            <div className="F">F</div>
+          </div>
         </SDiv6>
         <SDivider />
       </>
@@ -389,7 +391,7 @@ const SDiv5 = styled.div`
     margin-bottom: 10px;
     border: 1px solid #ddd;
     background-color: #444;
-    color: #f6f;
+    color: #eee;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -417,7 +419,31 @@ const SDiv5 = styled.div`
 `;
 
 const SDiv6 = styled.div`
-  display: grid
+  .grid_container {
+    display: grid;
+    grid-template-rows: 150px 200px;
+    grid-template-columns: 1fr 2fr 3fr;
+    border: 1px solid #aaa;
+    color: #fff;
+    .A {
+      background-color: #f33;
+    }
+    .B {
+      background-color: #3f3;
+    }
+    .C {
+      background-color: #33f;
+    }
+    .D {
+      background-color: #555;
+    }
+    .E {
+      background-color: #777;
+    }
+    .F {
+      background-color: #999;
+    }
+  }
 `
 
 export default Style;

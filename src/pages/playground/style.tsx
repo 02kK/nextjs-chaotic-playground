@@ -142,6 +142,16 @@ const Style = () => {
           <div className="inline-flex">inline-flex</div>
         </SDiv5>
         <SDivider />
+        <SDiv6>
+          <h2>▼ グリッドレイアウトの検証</h2>
+          <div className="A">A</div>
+          <div className="B">B</div>
+          <div className="C">C</div>
+          <div className="D">D</div>
+          <div className="E">E</div>
+          <div className="F">F</div>
+        </SDiv6>
+        <SDivider />
       </>
     </StyledPGContainer>
   );
@@ -405,5 +415,9 @@ const SDiv5 = styled.div`
     display: inline-flex;
   }
 `;
+
+const SDiv6 = styled.div`
+  display: grid
+`
 
 export default Style;

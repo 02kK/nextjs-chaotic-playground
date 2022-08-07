@@ -107,7 +107,7 @@ const Style = () => {
         </SDiv4>
         <SDivider />
         <SDiv5>
-          <h2>▼ アウターボックスタイプの検証</h2>
+          <h2>▼ アウターディスプレイタイプの検証</h2>
           <div className="block">
             block block block block block block block block block block block
             block block block block block block block block block block block
@@ -149,7 +149,7 @@ const Style = () => {
             <div className="B">B</div>
             <div className="C">C</div>
             <div className="D">D</div>
-            <div className="E">E</div>
+            <div className="E">EEE EEE EEE EEE EEE</div>
             <div className="F">F</div>
           </div>
         </SDiv6>
@@ -421,8 +421,8 @@ const SDiv5 = styled.div`
 const SDiv6 = styled.div`
   .grid_container {
     display: grid;
-    grid-template-rows: 150px 200px;
-    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     border: 1px solid #aaa;
     color: #fff;
     .A {
@@ -438,12 +438,14 @@ const SDiv6 = styled.div`
       background-color: #555;
     }
     .E {
+      order: -1;
+      margin: 2px;
       background-color: #777;
     }
     .F {
       background-color: #999;
     }
   }
-`
+`;
 
 export default Style;

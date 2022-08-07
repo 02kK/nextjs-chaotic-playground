@@ -143,7 +143,7 @@ const Style = () => {
         </SDiv5>
         <SDivider />
         <SDiv6>
-          <h2>▼ グリッドレイアウトの検証</h2>
+          <h2>▼ グリッドレイアウト（グリッドライン）の検証</h2>
           <div className="grid_container">
             <div className="A">A</div>
             <div className="B">B</div>
@@ -153,6 +153,18 @@ const Style = () => {
             <div className="F">F</div>
           </div>
         </SDiv6>
+        <SDivider />
+        <SDiv7>
+          <h2>▼ グリッドレイアウト（グリッドエリア）の検証</h2>
+          <div className="grid_container">
+            <div className="A">A</div>
+            <div className="B">B</div>
+            <div className="C">C</div>
+            <div className="D">D</div>
+            <div className="E">EEE EEE EEE EEE EEE</div>
+            <div className="F">F</div>
+          </div>
+        </SDiv7>
         <SDivider />
       </>
     </StyledPGContainer>
@@ -451,6 +463,43 @@ const SDiv6 = styled.div`
       /* order: -1; */
       margin: 5px;
       background-color: #777;
+    }
+    .F {
+      background-color: #999;
+    }
+  }
+`;
+
+const SDiv7 = styled.div`
+  .grid_container {
+    display: grid;
+    grid-template-areas:
+      "area11 area12 area13"
+      "area21 area22 area23"
+      "area21 area22 area23";
+    /* グリッドエリア定義がされていれば暗黙トラック設定すれば自動で同じ大きさのトラックが作られる */
+    grid-auto-rows: 100px;
+    grid-auto-columns: 1fr;
+    border: 1px solid #aaa;
+    color: #fff;
+    div {
+      font-size: 24px;
+    }
+    .A {
+      background-color: #f33;
+    }
+    .B {
+      background-color: #3f3;
+    }
+    .C {
+      background-color: #33f;
+    }
+    .D {
+      background-color: #555;
+    }
+    .E {
+      background-color: #777;
+      grid-area: area22;
     }
     .F {
       background-color: #999;

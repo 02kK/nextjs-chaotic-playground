@@ -479,7 +479,10 @@ const SDiv7 = styled.div`
       "area21 area22 area23";
     /* グリッドエリア定義がされていれば暗黙トラック設定すれば自動で同じ大きさのトラックが作られる */
     grid-auto-rows: 100px;
-    grid-auto-columns: 1fr;
+    grid-auto-columns: 300px;
+    /* gap: 20px 40px; */
+    justify-content: end;
+    /* justify-items: start; */
     border: 1px solid #aaa;
     color: #fff;
     div {
@@ -490,6 +493,7 @@ const SDiv7 = styled.div`
     }
     .B {
       background-color: #3f3;
+      margin: auto;
     }
     .C {
       background-color: #33f;

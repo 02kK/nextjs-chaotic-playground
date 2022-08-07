@@ -421,25 +421,35 @@ const SDiv5 = styled.div`
 const SDiv6 = styled.div`
   .grid_container {
     display: grid;
-    grid-template-rows: repeat(2, 100px);
+    grid-template-rows: 100px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 100px;
     border: 1px solid #aaa;
     color: #fff;
+    div {
+      font-size: 24px;
+    }
     .A {
       background-color: #f33;
     }
     .B {
       background-color: #3f3;
+      grid-row: 1 / 3;
+      grid-column: 2 / 4;
+      z-index: 999;
     }
     .C {
       background-color: #33f;
+      text-align: right;
+      grid-row: 2 / span 2;
+      grid-column: 3 / span 3;
     }
     .D {
       background-color: #555;
     }
     .E {
-      order: -1;
-      margin: 2px;
+      /* order: -1; */
+      margin: 5px;
       background-color: #777;
     }
     .F {

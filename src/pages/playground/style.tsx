@@ -9,7 +9,7 @@ const sDiv1TestColor2 = "#f5f";
 const Style = () => {
   return (
     <StyledPGContainer>
-      <>
+      <SContainer>
         <h1>■ CSS3の検証</h1>
         <SDiv1>
           <h2>▼ 属性セレクタの指定の検証</h2>
@@ -166,10 +166,34 @@ const Style = () => {
           </div>
         </SDiv7>
         <SDivider />
-      </>
+        <SDiv8>
+          <h2>▼ テキスト関連スタイルの検証</h2>
+          <div className="vertical_align">
+            <div className="block">block-text</div>
+            <div className="inline">inline-text</div>
+            <div className="block_in_inline">
+              Block直下の文字列
+              <div className="align_container">
+                <img src="/img/shared/my_icon.jpeg" alt="alt" />
+                <span className="span1">span1</span>
+                <span className="span2">span2</span>
+                <span className="span3">span3</span>
+              </div>
+            </div>
+          </div>
+        </SDiv8>
+        <SDivider />
+      </SContainer>
     </StyledPGContainer>
   );
 };
+
+const SContainer = styled.div`
+  @font-face {
+    font-family: "apple-sysytem";
+    src: local(-apple-system), local(BlinkMacSystemFont), local(san-serif);
+  }
+`;
 
 const SDivider = styled.hr`
   margin: 20px 0;
@@ -507,6 +531,51 @@ const SDiv7 = styled.div`
     }
     .F {
       background-color: #999;
+    }
+  }
+`;
+
+const SDiv8 = styled.div`
+  font-family: "apple-sysytem";
+  .block {
+    display: block;
+    line-height: 100px;
+    background-color: #bad7f2;
+  }
+  .inline {
+    display: inline;
+    line-height: 100px;
+    vertical-align: super;
+    background-color: #baf2d8;
+  }
+  .block_in_inline {
+    font-size: 10px;
+    line-height: 100px;
+    background-color: #555;
+    border: 1px solid #00f;
+    padding: 10px;
+    color: #fff;
+    .align_container {
+      display: inline-block;
+      border: 1px solid #00f;
+    }
+    span {
+      vertical-align: top;
+      border: 1px solid #00f;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      vertical-align: top;
+    }
+    .span1 {
+      font-size: 20px;
+    }
+    .span2 {
+      font-size: 30px;
+    }
+    .span3 {
+      font-size: 40px;
     }
   }
 `;

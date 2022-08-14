@@ -597,8 +597,9 @@ const SDiv8 = styled.div`
     .flex-item {
       display: inline-block;
       background-color: #555;
+      letter-spacing: 0.15em;
       color: #fff;
-      -webkit-text-stroke: 2px #fff;
+      -webkit-text-stroke: 1px #fff;
       -webkit-text-fill-color: transparent;
       color: #fff;
       font-size: 80px;

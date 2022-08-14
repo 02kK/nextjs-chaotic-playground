@@ -167,7 +167,10 @@ const Style = () => {
         </SDiv7>
         <SDivider />
         <SDiv8>
-          <h2>▼ テキスト関連スタイルの検証</h2>
+          <h2>▼ 垂直方向位置揃えの検証</h2>
+          <h3>&gt; テキスト（アウターディスプレイタイプ＝インライン）の垂直方向位置揃え
+
+          </h3>
           <div className="vertical_align">
             <div className="block">block-text</div>
             <div className="inline">inline-text</div>
@@ -179,6 +182,10 @@ const Style = () => {
                 <span className="span2">span2</span>
                 <span className="span3">span3</span>
               </div>
+            </div>
+            <h3>&gt; ボックス自体の垂直方向位置揃え</h3>
+            <div className="flex-container">
+              <div className="flex-item">flex-item</div>
             </div>
           </div>
         </SDiv8>
@@ -576,6 +583,19 @@ const SDiv8 = styled.div`
     }
     .span3 {
       font-size: 40px;
+    }
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    border: 1px solid #ddd;
+    .flex-item {
+      display: inline-block;
+      background-color: #555;
+      color: #fff;
     }
   }
 `;

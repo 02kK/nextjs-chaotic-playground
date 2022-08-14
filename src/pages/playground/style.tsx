@@ -168,8 +168,9 @@ const Style = () => {
         <SDivider />
         <SDiv8>
           <h2>▼ 垂直方向位置揃えの検証</h2>
-          <h3>&gt; テキスト（アウターディスプレイタイプ＝インライン）の垂直方向位置揃え
-
+          <h3>
+            &gt;
+            テキスト（アウターディスプレイタイプ＝インライン）の垂直方向位置揃え
           </h3>
           <div className="vertical_align">
             <div className="block">block-text</div>
@@ -547,6 +548,7 @@ const SDiv8 = styled.div`
   .block {
     display: block;
     line-height: 100px;
+    text-decoration: underline;
     background-color: #bad7f2;
   }
   .inline {
@@ -596,6 +598,10 @@ const SDiv8 = styled.div`
       display: inline-block;
       background-color: #555;
       color: #fff;
+      -webkit-text-stroke: 2px #fff;
+      -webkit-text-fill-color: transparent;
+      color: #fff;
+      font-size: 80px;
     }
   }
 `;

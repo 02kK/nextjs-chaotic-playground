@@ -103,7 +103,9 @@ const Style = () => {
             <div></div>
           </div>
           <div className="sticky-outer"></div>
-          <div className="footer">&copy; Sample Sapmple Corporation</div>
+          <div className="footer">
+            &copy; extrovert indoor, introvert outdoor
+          </div>
         </SDiv4>
         <SDivider />
         <SDiv5>
@@ -190,6 +192,46 @@ const Style = () => {
             </div>
           </div>
         </SDiv8>
+        <SDivider />
+        <SDiv9>
+          <h2>▼ テーブルレイアウトの検証</h2>
+          <table className="tableA">
+            <caption>Cost of Rental Server</caption>
+            {/* <colgroup><col span={2} /></colgroup>
+            <colgroup><col span={3} /></colgroup> */}
+            <thead>
+              <tr>
+                <th colSpan={2}>Plan</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowSpan={2}>Server</th>
+                <th>Cost</th>
+                <td>100 yen</td>
+                <td>200 yen</td>
+                <td>300yen</td>
+              </tr>
+              <tr>
+                <th>Capacity</th>
+                <td>10 GB</td>
+                <td>20 GB</td>
+                <td>30 GB</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colSpan={2}>Overall Satisfaction</th>
+                <td>5</td>
+                <td>4</td>
+                <td>3</td>
+              </tr>
+            </tfoot>
+          </table>
+        </SDiv9>
         <SDivider />
       </SContainer>
     </StyledPGContainer>
@@ -603,6 +645,52 @@ const SDiv8 = styled.div`
       -webkit-text-fill-color: transparent;
       color: #fff;
       font-size: 80px;
+    }
+  }
+`;
+
+const SDiv9 = styled.div`
+  .tableA {
+    border: solid 2px #abcf3e;
+    padding: 10px;
+    border-spacing: 3px;
+
+    caption {
+      margin-top: 2px;
+      caption-side: bottom;
+    }
+
+    th {
+      padding: 10px 20px;
+      border: solid 2px #5ce8ee;
+    }
+
+    td {
+      padding: 10px 20px;
+      border: solid 2px #ff8e52;
+      text-align: center;
+    }
+
+    /* colgroup {
+      &:nth-of-type(1) {
+        background-color: #ddd;
+      }
+      &:nth-of-type(2) {
+        background-color: #ccc
+      }
+    } */
+
+    thead {
+      background-color: #5ce8ee;
+      color: #fff;
+    }
+    tfoot {
+      background-color: #8e52ff;
+      color: #fff;
+      th,
+      td {
+        border: solid 2px #8e52ff;
+      }
     }
   }
 `;

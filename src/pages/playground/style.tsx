@@ -233,6 +233,16 @@ const Style = () => {
           </table>
         </SDiv9>
         <SDivider />
+        <SDiv10>
+          <h2>▼ 特殊効果（変形／アニメーション）の検証</h2>
+          <div className="transform-container">
+            <div className="transition-container">
+              <div className="text">eiio</div>
+            </div>
+            <img src="/img/shared/my_icon.jpeg" alt="icon" />
+          </div>
+        </SDiv10>
+        <SDivider />
       </SContainer>
     </StyledPGContainer>
   );
@@ -690,6 +700,55 @@ const SDiv9 = styled.div`
       th,
       td {
         border: solid 2px #8e52ff;
+      }
+    }
+  }
+`;
+
+const SDiv10 = styled.div`
+  .transform-container {
+    display: flex;
+    justify-content: space-between;
+    .transition-container {
+      width: 200px;
+      height: 200px;
+      border-radius: 999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      background-color: #5ce8ee;
+      &:hover {
+        animation: change 0.3s;
+        animation-fill-mode: forwards;
+      }
+      .text {
+        color: #fff;
+        font-weight: 700;
+        font-size: 50px;
+      }
+      @keyframes change {
+        0% {
+          background-color: #5ce8ee; */
+        }
+        50% {
+          background-color: #8e52ff;
+          transform: rotate(180deg);
+        }
+        100% {
+          background-color: #ff8e52;
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      transition: 0.3s;
+      &:hover {
+        transform: perspective(200px) rotateY(45deg) scaleX(1.2);
+        filter: hue-rotate(180deg);
       }
     }
   }
